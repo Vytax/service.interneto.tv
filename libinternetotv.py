@@ -329,9 +329,9 @@ class InternetoTV(object):
           a = p.find('a')
           if a:
             programme['record'] = a['href']
-            programme['title'] = a.string.strip()
+            programme['title'] = a.get_text().strip()
           else:
-            programme['title'] = p.string.strip()
+            programme['title'] = p.get_text().strip()
             
           img = item.find('img')
           if img and ('data-original' in img.attrs):
